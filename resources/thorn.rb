@@ -244,5 +244,3 @@ module Thorn
     DataVisitor.visit(root)
   end
 end
-
-Thorn.scss_to_data("/Users/noprompt/git/jlong/sass-bootstrap/lib/_mixins.scss")

@@ -16,9 +16,6 @@
 (defn scss->edn [file-path]
   (zweikopf/clojurize (zweikopf/call-ruby "Thorn" :scss_to_data file-path)))
 
-;(require '[clojure.stacktrace :as stacktrace])
-;(stacktrace/print-stack-trace *e)
-
 ;;----------------------------------------------------------------------
 ;; Utilities
 
@@ -242,6 +239,6 @@
                         last
                         symbol)
         styles-spec (concat `(garden.def/defstyles ~styles-name) styles)]
-    (pprint `(~spec
-              ~@defs
-              ~styles-spec))))
+    `(~spec
+      ~@defs
+      ~styles-spec)))
