@@ -133,6 +133,9 @@
 (defmethod tag->clj :comment [{:keys [content]}]
   (cons 'comment (mapcat #(string/split % #"\n") content)))
 
+(defmethod tag->clj :color [{:keys [content]}]
+  (first content))
+
 (defmethod tag->clj :string [{:keys [content]}]
   (first content))
 
